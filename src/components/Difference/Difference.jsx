@@ -1,12 +1,14 @@
 // libs
 import React, { Component } from 'react';
+// hoc
+import withHtmlClass from '../../hoc/withHtmlClass';
 // styles
 import './index.scss';
 
 class Difference extends Component {
   render() {
     return (
-      <div class="difference-page">
+      <div className="difference-page">
         <div className="fixed-text-container">
           This text is fixed
         </div>
@@ -19,4 +21,4 @@ class Difference extends Component {
   }
 }
 
-export default Difference;
+export default withHtmlClass('difference')(Difference);
