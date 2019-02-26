@@ -1,0 +1,20 @@
+.mousedot {
+  cursor: none;
+  width: 100%;
+  position: relative;
+  font-weight: 300;
+  background-color: #fff;
+  user-select: none;
+
+  .mouse {
+    position: fixed;
+    width: 11px;
+    height: 11px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: top .12s, left .12s;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 99;
+  }
+}
