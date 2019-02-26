@@ -11,4 +11,4 @@ export default [
     path: '/mousedot',
     Component: MouseDot
   }
-]
+];
