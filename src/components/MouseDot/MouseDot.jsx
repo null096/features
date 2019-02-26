@@ -21,7 +21,7 @@ class MouseDot extends Component {
         <div>
           {'mousedot '.repeat(500)}
         </div>
-        <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/nature-quotes-1519849372.jpg" alt=""/>
+        <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/nature-quotes-1519849372.jpg" alt="" />
       </div>
     );
   }
