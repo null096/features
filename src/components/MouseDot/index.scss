@@ -1,20 +1,51 @@
 .mousedot {
   cursor: none;
   width: 100%;
-  position: relative;
   font-weight: 300;
   background-color: #fff;
   user-select: none;
 
-  .mouse {
+  .dot-outer {
     position: fixed;
-    width: 11px;
-    height: 11px;
-    background-color: #fff;
-    border-radius: 50%;
     transition: top .1s, left .1s;
-    pointer-events: none;
-    mix-blend-mode: difference;
     z-index: 99;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    
+    .dot-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      width: 11px;
+      height: 11px;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: transform .2s ease;
+      transform-origin: 50% 50%;
+    }
+
+    .dot-shadow {
+      display: none;    // TODO: remove
+      opacity: 1;
+      width: 11px;
+      height: 11px;
+      background-color: rgb(156, 156, 156);
+      border-radius: 50%;
+      transition: transform .2s ease;
+      transform-origin: 50% 50%;
+    }
+
+    &.with-shadow .dot-shadow {
+
+    }
+
+    &.is-down .dot-inner,
+    &.is-down .dot-shadow {
+      transform: translate3d(-50%, -50%, 0) scale(.7);
+    }
   }
 }
