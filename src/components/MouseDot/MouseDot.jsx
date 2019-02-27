@@ -6,12 +6,12 @@ import withMouse from '../../hoc/withMouse';
 // styles
 import './index.scss';
 // constants
-const outerDotSize = 50;
+const outerDotSize = 11;
 
 class MouseDot extends Component {
   render() {
     const {
-      mouse: { x, y, isDown, isUpAfterDown }
+      mouse: { x, y, isDown }  
     } = this.props;
     const dotOuterStyles = {
       width: `${outerDotSize}px`,
@@ -21,7 +21,6 @@ class MouseDot extends Component {
     };
     const dotOuterClass = classNames(
       'dot-outer',
-      isUpAfterDown ? 'with-shadow' : '',
       isDown ? 'is-down' : ''
     );
 
@@ -29,7 +28,6 @@ class MouseDot extends Component {
       <div className="mousedot">
         <div className={dotOuterClass} style={dotOuterStyles}>
           <div className="dot-inner"></div>
-          <div className="dot-shadow"></div>
         </div>
         <div>
           {'mousedot '.repeat(500)}
