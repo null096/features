@@ -1,6 +1,6 @@
 // libs
 import React, { Component } from 'react';
-// hoc
+// hocs
 import withHtmlClass from '../../hoc/withHtmlClass';
 // styles
 import './index.scss';

@@ -1,46 +1,29 @@
 // libs
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import posed from 'react-pose';
-// hoc
+// components
+import MouseClickShadows from './MouseClickShadows';
+// hocs
 import withMouse from '../../hoc/withMouse';
 // styles
 import './index.scss';
 // constants
-const outerDotSize = 11;
-
-const MouseClickShadow = posed.div({
-  visible: {
-    opacity: .8,
-    transition: {
-      opacity: { duration: 0 }
-    }
-  },
-  hidden: {
-    opacity: 0,
-    transition: {
-      opacity: { duration: 0 }
-    }
-  }
-});
+import { outerDotSize } from './constants';
+// utils
+import { getDotPositionByCursorPosition } from './utils';
 
 class MouseDot extends Component {
-  // state = {
-  //   dotShadows: []
-  // };
-  // static getDerivedStateFromProps(nextProps, prevState) {
-    
-  // }
   render() {
     const {
-      mouse: { x, y, isDown, isUpAfterDown }
+      mouse: { x, y, isDown }
     } = this.props;
+    const dotPosition = getDotPositionByCursorPosition({ y, x, dotSize: outerDotSize });
     const dotOuterStyles = {
+      top: `${dotPosition.y}px`,
+      left: `${dotPosition.x}px`,
       width: `${outerDotSize}px`,
       height: `${outerDotSize}px`,
-      top: `${y - outerDotSize / 2}px`,
-      left: `${x - outerDotSize / 2}px`,
-      display: x === null && y === null ? 'none' : ''
+      display: x === null || y === null ? 'none' : ''
     };
     const dotOuterClass = classNames(
       'dot-outer',
@@ -52,12 +35,7 @@ class MouseDot extends Component {
         <div className={dotOuterClass} style={dotOuterStyles}>
           <div className="dot-inner"></div>
         </div>
-        <div>
-          <MouseClickShadow
-            className="dot-shadow"
-            pose={isDown ? 'visible' : 'hidden'}
-          />
-        </div>
+        <MouseClickShadows />
         <div>
           {'mousedot '.repeat(500)}
         </div>
