@@ -38,7 +38,7 @@ const ClickShadow = posed.div({
         type: 'keyframes',
         values: [
           'scale(1)',
-          'scale(18)',
+          'scale(20)',
         ],
         times: [0, .9],
         duration: dotShadowAminDuration,
