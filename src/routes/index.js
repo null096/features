@@ -1,6 +1,7 @@
 // components
 import Difference from '../components/Difference/Difference';
 import MouseDot from '../components/MouseDot/MouseDot';
+import LazyComponentSuspense from '../components/LazyComponent/LazyComponentSuspense';
 
 export default [
   {
@@ -10,5 +11,9 @@ export default [
   {
     path: '/mousedot',
     Component: MouseDot
+  },
+  {
+    path: '/lazy',
+    Component: LazyComponentSuspense
   }
 ];
