@@ -3,6 +3,7 @@ import Difference from '../components/Difference/Difference';
 import MouseDot from '../components/MouseDot/MouseDot';
 import LazyComponentSuspense from '../components/LazyComponent/LazyComponentSuspense';
 import ShuffleTest from '../components/ChildrenManipulation/Shuffle/ShuffleTest';
+import HowManyTest from '../components/ChildrenManipulation/HowMany/HowManyTest';
 
 export default [
   {
@@ -20,5 +21,9 @@ export default [
   {
     path: '/shufflechildren',
     Component: ShuffleTest
+  },
+  {
+    path: '/howmanychildren',
+    Component: HowManyTest
   }
 ];
