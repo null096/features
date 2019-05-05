@@ -5,6 +5,7 @@ import LazyComponentSuspense from '../components/LazyComponent/LazyComponentSusp
 import ShuffleTest from '../components/ChildrenManipulation/Shuffle/ShuffleTest';
 import HowManyTest from '../components/ChildrenManipulation/HowMany/ComponentVer/HowManyTest';
 import HowManyTestHoc from '../components/ChildrenManipulation/HowMany/HocVer/HowManyTestHoc';
+import Images from '../components/ImagesAnimation';
 
 export default [
   {
@@ -30,5 +31,9 @@ export default [
   {
     path: '/howmanychildrenhoc',
     Component: HowManyTestHoc
+  },
+  {
+    path: '/images-animation',
+    Component: Images
   }
 ];
